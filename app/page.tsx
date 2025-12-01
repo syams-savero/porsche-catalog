@@ -1,65 +1,173 @@
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
+  const scrollToCatalog = () => {
+    const catalogSection = document.getElementById('catalog-section');
+    if (catalogSection) {
+      catalogSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="bg-[#050505] text-white overflow-x-hidden selection:bg-red-900 selection:text-white font-sans">
+      
+      {/* === HERO SECTION (VERSI TYPOGRAPHIC - TANPA MOBIL) === */}
+      <section className="relative h-screen w-full flex flex-col justify-center items-center z-10 overflow-hidden">
+        
+        {/* Background Glow Effect (Lebih dramatis) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/20 blur-[180px] rounded-full pointer-events-none opacity-40" />
+
+        <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center relative z-20">
+          
+          {/* Teks Judul Animasi - DIBUAT RAKSASA */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center relative z-40"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="text-zinc-500 tracking-[0.8em] text-xs md:text-sm uppercase mb-8 font-medium">
+              The Ultimate Collection
+            </h2>
+
+            {/* FONT JADI SANGAT BESAR (Statement Piece) */}
+            <h1 className="text-[5rem] md:text-[12rem] lg:text-[15rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-800 leading-[0.8] select-none mix-blend-overlay">
+              PORSCHE
+            </h1>
+          </motion.div>
+
+          {/* Hapus Gambar Mobil di Sini - Biar Bersih */}
+          
+          {/* Tombol Scroll Down (Lebih Minimalis) */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="absolute bottom-20 z-40"
           >
-            Documentation
-          </a>
+            <button 
+              onClick={scrollToCatalog}
+              className="group flex flex-col items-center gap-4 cursor-pointer"
+            >
+              <span className="text-[10px] tracking-[0.4em] text-zinc-500 group-hover:text-white transition-colors">
+                EXPLORE THE GARAGE
+              </span>
+              {/* Panah animasi */}
+              <div className="w-[1px] h-16 bg-gradient-to-b from-zinc-800 via-zinc-500 to-transparent overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full bg-white/50 animate-rain" />
+              </div>
+            </button>
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </section>
+
+
+      {/* === CATALOG GRID (TETAP SAMA) === */}
+      <section id="catalog-section" className="min-h-screen w-full bg-[#0a0a0a] py-24 relative z-20">
+        <div className="container mx-auto px-6">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16 border-b border-zinc-800 pb-8"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">SELECT YOUR MACHINE</h2>
+            <p className="text-zinc-500 max-w-xl text-lg font-light">Engineering perfection. Choose your driving experience.</p>
+          </motion.div>
+
+          {/* GRID LAYOUT */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
+            
+            {/* 1. 911 (Lebar) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              <Image src="/cars/911-bg.avif" alt="911" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute bottom-0 left-0 p-8 z-20">
+                <h3 className="text-5xl font-black tracking-tighter mb-1 italic">911</h3>
+                <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-red-600 pl-3">TIMELESS MACHINE</p>
+              </div>
+            </motion.div>
+
+            {/* 2. 718 (Kecil) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              <Image src="/cars/718-bgg.avif" alt="718" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute top-0 left-0 p-6 z-20 w-full">
+                <h3 className="text-4xl font-black tracking-tighter mb-1">718</h3>
+                <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg">MID-ENGINE</span>
+              </div>
+            </motion.div>
+
+            {/* 3. TAYCAN (Kecil) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              <Image src="/cars/taycan-bg.avif" alt="Taycan" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute bottom-0 left-0 p-6 z-20">
+                <h3 className="text-4xl font-black tracking-tighter mb-1 text-blue-100">TAYCAN</h3>
+                <p className="text-blue-400/80 tracking-widest text-xs font-mono">SOUL ELECTRIFIED</p>
+              </div>
+            </motion.div>
+
+            {/* 4. PANAMERA (Lebar) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              {/* Update Gambar Panamera */}
+              <Image src="/cars/panamera-bg.avif" alt="Panamera" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute bottom-0 right-0 p-8 z-20 text-right">
+                <h3 className="text-5xl font-black tracking-tighter mb-1">PANAMERA</h3>
+                <p className="text-zinc-400 tracking-widest text-xs font-mono border-r-2 border-white pr-3">SPORT LIMOUSINE</p>
+              </div>
+            </motion.div>
+
+            {/* 5. CAYENNE (Lebar) - SESUAI REQUEST: LEBAR */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              {/* Update Gambar Cayenne */}
+              <Image src="/cars/cayene-bg.jpeg" alt="Cayenne" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute bottom-0 left-0 p-8 z-20">
+                <h3 className="text-5xl font-black tracking-tighter mb-1">CAYENNE</h3>
+                <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-white pl-3">PERFORMANCE SUV</p>
+              </div>
+            </motion.div>
+
+             {/* 6. MACAN (Kecil) - SESUAI REQUEST: KECIL (KANAN CAYENNE) */}
+             <motion.div 
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+              {/* Update Gambar Macan */}
+              <Image src="/cars/macan-bg.avif" alt="Macan" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+              <div className="absolute top-0 left-0 p-6 z-20">
+                <h3 className="text-4xl font-black tracking-tighter mb-1">MACAN</h3>
+                <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg w-fit">COMPACT SUV</span>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -92,8 +92,10 @@ export default function ModelDetailPage({ params }: { params: Promise<{ slug: st
               {currentCar.name}
             </h1>
             <p className="text-sm md:text-base text-zinc-400 font-light italic border-l-2 border-red-600 pl-4 mb-6">
-              "{currentCar.tagline}"
+              {currentCar.tagline}
             </p>
+
+            
           </motion.div>
 
           {/* GRID SPEK LEBIH LENGKAP */}

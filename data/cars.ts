@@ -21,29 +21,191 @@ export const porscheModels: Record<string, Car[]> = {
     {
       id: "911-carrera",
       name: "911 Carrera",
-      tagline: "The Icon.",
-      image: "/cars/911-carrera.avif", // Ganti sesuai file lu
+      tagline: "Gasoline RWD Automatic",
+      image: "/cars/911-carrera.avif",
       category: "911",
-      specs: { hp: "379 HP", acceleration: "4.0 s", topSpeed: "293 km/h", engine: "3.0L Twin-Turbo Flat-6", price: "$114,400" },
+      specs: { hp: "394 HP", acceleration: "4.1 s", topSpeed: "294 km/h", engine: "3.0L flat-6 twin-turbo", price: "$132,300" },
       description: "The silhouette: iconic. The design: timeless. The technology: inspired by great racing victories."
     },
     {
-      id: "911-gt3-rs",
-      name: "911 GT3 RS",
-      tagline: "Born in Flacht.",
-      image: "/cars/911-gt3-rs.avif",
+      id: "911-carrera-t",
+      name: "911 Carrera T",
+      tagline: "Gasoline RWD Manual",
+      image: "/cars/911-carrera-t.avif",
       category: "911",
-      specs: { hp: "518 HP", acceleration: "3.0 s", topSpeed: "296 km/h", engine: "4.0L NA Flat-6", price: "$241,300" },
+      specs: { hp: "394 HP", acceleration: "4.5 s", topSpeed: "295 km/h", engine: "3.0L flat-6 twin-turbo", price: "135,995" },
       description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
     },
     {
-      id: "911-turbo-s",
-      name: "911 Turbo S",
-      tagline: "Relentless.",
-      image: "/cars/911-gt3-rs.avif", // Placeholder
+      id: "911-carrera-s",
+      name: "911 Carrera S",
+      tagline: "Gasoline RWD Automatic",
+      image: "/cars/911-carrera-s.avif",
       category: "911",
-      specs: { hp: "640 HP", acceleration: "2.6 s", topSpeed: "330 km/h", engine: "3.8L Twin-Turbo Flat-6", price: "$230,400" },
-      description: "The 911 Turbo S is the benchmark for performance, comfort, and everyday usability."
+      specs: { hp: "473 HP", acceleration: "3.5 s", topSpeed: "308 km/h", engine: "3.0 L twin-turbo flat-6 (PDK)", price: "$148,395" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
+    },
+    {
+      id: "",
+      name: "",
+      tagline: "",
+      image: "/cars/",
+      category: "911",
+      specs: { hp: " HP", acceleration: " s", topSpeed: " km/h", engine: "", price: "" },
+      description: "Motorsport technology meets the road. The 911 GT3 RS is designed for maximum performance."
     }
   ],
   "718": [

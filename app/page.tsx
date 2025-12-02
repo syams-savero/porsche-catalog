@@ -85,86 +85,97 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
             
             {/* 1. 911 (Lebar) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              <Image src="/cars/911-bg.avif" alt="911" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute bottom-0 left-0 p-8 z-20">
-                <h3 className="text-5xl font-black tracking-tighter mb-1 italic">911</h3>
-                <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-red-600 pl-3">TIMELESS MACHINE</p>
-              </div>
-            </motion.div>
-
-            {/* 2. 718 (Kecil) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              <Image src="/cars/718-bgg.avif" alt="718" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute top-0 left-0 p-6 z-20 w-full">
-                <h3 className="text-4xl font-black tracking-tighter mb-1">718</h3>
-                <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg">MID-ENGINE</span>
-              </div>
-            </motion.div>
+            <Link href="/models/911" className="lg:col-span-2 block group h-full"> {/* TAMBAH h-full */}
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }} 
+    whileInView={{ opacity: 1, y: 0 }} 
+    transition={{ delay: 0.1 }}
+    // PENTING: Hapus 'lg:col-span-2' di sini, karena udah dipindah ke Link di atas
+    // Pastikan ada 'h-full' di sini juga
+    className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+  >
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+    <Image src="/cars/911-bg.avif" alt="911" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+    <div className="absolute bottom-0 left-0 p-8 z-20">
+      <h3 className="text-5xl font-black tracking-tighter mb-1 italic group-hover:text-white transition-colors">911</h3>
+      <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-red-600 pl-3 group-hover:text-zinc-300">TIMELESS MACHINE</p>
+    </div>
+  </motion.div>
+</Link>
+{/* 2. 718 (Kecil) */}
+            <Link href="/models/718" className="block group h-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+                className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                <Image src="/cars/718-bgg.avif" alt="718" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute top-0 left-0 p-6 z-20 w-full">
+                  <h3 className="text-4xl font-black tracking-tighter mb-1 group-hover:text-white transition-colors">718</h3>
+                  <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg">MID-ENGINE</span>
+                </div>
+              </motion.div>
+            </Link>
 
             {/* 3. TAYCAN (Kecil) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              <Image src="/cars/taycan-bg.avif" alt="Taycan" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute bottom-0 left-0 p-6 z-20">
-                <h3 className="text-4xl font-black tracking-tighter mb-1 text-blue-100">TAYCAN</h3>
-                <p className="text-blue-400/80 tracking-widest text-xs font-mono">SOUL ELECTRIFIED</p>
-              </div>
-            </motion.div>
+            <Link href="/models/taycan" className="block group h-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+                className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                <Image src="/cars/taycan-bg.avif" alt="Taycan" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 p-6 z-20">
+                  <h3 className="text-4xl font-black tracking-tighter mb-1 text-blue-100 group-hover:text-blue-50 transition-colors">TAYCAN</h3>
+                  <p className="text-blue-400/80 tracking-widest text-xs font-mono">SOUL ELECTRIFIED</p>
+                </div>
+              </motion.div>
+            </Link>
 
             {/* 4. PANAMERA (Lebar) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              {/* Update Gambar Panamera */}
-              <Image src="/cars/panamera-bg.avif" alt="Panamera" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute bottom-0 right-0 p-8 z-20 text-right">
-                <h3 className="text-5xl font-black tracking-tighter mb-1">PANAMERA</h3>
-                <p className="text-zinc-400 tracking-widest text-xs font-mono border-r-2 border-white pr-3">SPORT LIMOUSINE</p>
-              </div>
-            </motion.div>
+            <Link href="/models/panamera" className="lg:col-span-2 block group h-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+                className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                <Image src="/cars/panamera-bg.avif" alt="Panamera" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 right-0 p-8 z-20 text-right">
+                  <h3 className="text-5xl font-black tracking-tighter mb-1 group-hover:text-white transition-colors">PANAMERA</h3>
+                  <p className="text-zinc-400 tracking-widest text-xs font-mono border-r-2 border-white pr-3 group-hover:text-zinc-300">SPORT LIMOUSINE</p>
+                </div>
+              </motion.div>
+            </Link>
 
-            {/* 5. CAYENNE (Lebar) - SESUAI REQUEST: LEBAR */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-              className="lg:col-span-2 relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              {/* Update Gambar Cayenne */}
-              <Image src="/cars/cayene-bg.jpeg" alt="Cayenne" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute bottom-0 left-0 p-8 z-20">
-                <h3 className="text-5xl font-black tracking-tighter mb-1">CAYENNE</h3>
-                <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-white pl-3">PERFORMANCE SUV</p>
-              </div>
-            </motion.div>
+            {/* 5. CAYENNE (Lebar) */}
+            <Link href="/models/cayenne" className="lg:col-span-2 block group h-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+                className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                <Image src="/cars/cayene-bg.jpeg" alt="Cayenne" fill className="object-cover object-center opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 p-8 z-20">
+                  <h3 className="text-5xl font-black tracking-tighter mb-1 group-hover:text-white transition-colors">CAYENNE</h3>
+                  <p className="text-zinc-400 tracking-widest text-xs font-mono border-l-2 border-white pl-3 group-hover:text-zinc-300">PERFORMANCE SUV</p>
+                </div>
+              </motion.div>
+            </Link>
 
-             {/* 6. MACAN (Kecil) - SESUAI REQUEST: KECIL (KANAN CAYENNE) */}
-             <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-              className="relative group rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              {/* Update Gambar Macan */}
-              <Image src="/cars/macan-bg.avif" alt="Macan" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
-              <div className="absolute top-0 left-0 p-6 z-20">
-                <h3 className="text-4xl font-black tracking-tighter mb-1">MACAN</h3>
-                <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg w-fit">COMPACT SUV</span>
-              </div>
-            </motion.div>
-
+             {/* 6. MACAN (Kecil) */}
+             <Link href="/models/macan" className="block group h-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+                className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-600 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 z-10" />
+                <Image src="/cars/macan-bg.avif" alt="Macan" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute top-0 left-0 p-6 z-20 w-full h-full flex flex-col justify-between">
+                  <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg w-fit">COMPACT SUV</span>
+                  <h3 className="text-4xl font-black tracking-tighter mb-1 text-right group-hover:text-white transition-colors">MACAN</h3>
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>

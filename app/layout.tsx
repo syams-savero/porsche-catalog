@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll"; // <--- 1. IMPORT INI
 
 // Setup Font Keren
 const spaceGrotesk = Space_Grotesk({
@@ -26,9 +27,9 @@ export default function RootLayout({
     <html lang="en">
       {/* HANYA BOLEH ADA SATU BODY DI SINI */}
       <body className={`${spaceGrotesk.variable} antialiased bg-black text-white`}>
+        <SmoothScroll /> {/* <--- 2. PASANG DI SINI (Biar semua halaman jadi licin) */}
         {children}
       </body>
     </html>
   );
 }
-

@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { porscheModels } from '@/data/cars';
 import { ChevronLeft, ChevronRight, ArrowLeft, MessageCircle } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import AIChat from '@/components/AIChat';
+
 
 export default function ModelDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
@@ -146,6 +148,7 @@ export default function ModelDetailPage({ params }: { params: Promise<{ slug: st
         </div>
 
       </div>
+                <AIChat carName={currentCar.name} />
     </main>
   );
 }

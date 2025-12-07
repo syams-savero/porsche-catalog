@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 export default function Home() {
   const scrollToCatalog = () => {
@@ -17,10 +16,30 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Varian animasi untuk quote (muncul dari bawah + fade in)
+  const quoteVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 1, ease: "easeOut" } 
+    }
+  };
+
+  // Varian animasi untuk nama (muncul setelah quote)
+  const nameVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { delay: 0.8, duration: 0.8, ease: "easeOut" } 
+    }
+  };
+
   return (
     <main className="bg-[#050505] text-white overflow-x-hidden selection:bg-red-900 selection:text-white font-sans">
       
-      {/* === HERO SECTION (VERSI TYPOGRAPHIC) === */}
+      {/* === HERO SECTION === */}
       <section className="relative h-screen w-full flex flex-col justify-center items-center z-10 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-red-900/20 blur-[120px] rounded-full pointer-events-none opacity-60" />
 
@@ -60,11 +79,9 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* === CATALOG GRID (VERSI FINAL: FULL COVER & LINK) === */}
+      {/* === CATALOG GRID === */}
       <section id="catalog-section" className="min-h-screen w-full bg-[#0a0a0a] py-24 relative z-20">
         <div className="container mx-auto px-6">
-          
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +117,7 @@ export default function Home() {
                 className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-600 transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10" />
-                <Image src="/cars/718-bgg.avif" alt="718" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <Image src="/cars/718-bg2.avif" alt="718" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute top-0 left-0 p-6 z-20 w-full">
                   <h3 className="text-4xl font-black tracking-tighter mb-1 group-hover:text-white transition-colors">718</h3>
                   <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg">MID-ENGINE</span>
@@ -108,7 +125,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 3. Taycan (Kecil) */}
+            {/* 3. TAYCAN (Kecil) */}
             <Link href="/models/taycan" className="block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
@@ -123,7 +140,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 4. Panamera (Lebar) */}
+            {/* 4. PANAMERA (Lebar) */}
             <Link href="/models/panamera" className="lg:col-span-2 block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
@@ -138,7 +155,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 5. Cayenne (Lebar) */}
+            {/* 5. CAYENNE (Lebar) */}
             <Link href="/models/cayenne" className="lg:col-span-2 block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
@@ -153,7 +170,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-             {/* 6. Macan (Kecil) */}
+             {/* 6. MACAN (Kecil) */}
              <Link href="/models/macan" className="block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -172,21 +189,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* === ENDING SECTION (QUOTE & FOOTER) === */}
+      {/* === ENDING SECTION (QUOTE & FOOTER) - INI YANG TADI HILANG === */}
       <section className="w-full bg-black border-t border-zinc-900 py-20 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-20 max-w-4xl mx-auto"
           >
-            <p className="text-xl md:text-3xl font-serif italic text-zinc-400 leading-relaxed max-w-4xl mx-auto">
+            <motion.p 
+              variants={quoteVariant}
+              className="text-xl md:text-3xl font-serif italic text-zinc-400 leading-relaxed"
+            >
               "In the beginning I looked around and could not find quite the car I dreamed of. So I decided to build it myself."
-            </p>
-            <p className="text-zinc-600 mt-6 text-sm tracking-[0.2em] uppercase font-bold">— Ferry Porsche</p>
+            </motion.p>
+            
+            <motion.p 
+              variants={nameVariant}
+              className="text-zinc-600 mt-6 text-sm tracking-[0.2em] uppercase font-bold"
+            >
+              — Ferry Porsche
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-left text-xs text-zinc-500 border-t border-zinc-900 pt-10">

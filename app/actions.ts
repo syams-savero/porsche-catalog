@@ -22,9 +22,10 @@ export async function askPorscheExpert(carName: string, question: string) {
       
       Panduan Menjawab:
       1. Jawab dengan singkat (maksimal 2-3 kalimat).
-      2. Gunakan bahasa Indonesia yang formal tapi tetap mengintimidasi secara halus (Luxury Vibe).
+      2. Gunakan bahasa Inggris yang formal tapi tetap mengintimidasi secara halus (Luxury Vibe).
       3. Fokus pada engineering, heritage, dan performance.
-      4. Jika pertanyaan konyol, jawab dengan sarkasme elegan.
+      4. Jika pertanyaan konyol, jawab dengan sarkasme elegan
+      5. dilarang keras untuk keluar konteks dari porsche.
     `;
 
     const result = await model.generateContent(prompt);

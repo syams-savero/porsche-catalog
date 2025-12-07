@@ -71,7 +71,7 @@ export default function AIChat({
               {history.length === 0 && (
                 <div className="h-full flex flex-col items-center justify-center text-zinc-500 space-y-2 opacity-50">
                   <p className="text-xs text-center">
-                    Tanyakan performa, harga, atau<br/>keunggulan {carName}...
+                    Ask performance, price, or<br/>something else {carName}...
                   </p>
                 </div>
               )}
@@ -105,7 +105,7 @@ export default function AIChat({
             <input 
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Ketik pertanyaan..."
+              placeholder="Ask Something..."
               className="flex-1 bg-zinc-900 text-white text-xs p-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-zinc-600 placeholder-zinc-600"
             />
             <button type="submit" disabled={loading} className="bg-white text-black p-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50">

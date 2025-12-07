@@ -32,7 +32,7 @@ export default function ModelDetailPage({ params }: { params: Promise<{ slug: st
   };
 
   const handleOrder = () => {
-    const message = `Halo, saya tertarik dengan ${currentCar.name} (${currentCar.specs.price}). Bisa minta info lebih lanjut?`;
+    const message = `Hello im intrested with ${currentCar.name} (${currentCar.specs.price}). Can i get more information?`;
     const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
     window.open(waLink, '_blank');
   };
@@ -144,7 +144,7 @@ export default function ModelDetailPage({ params }: { params: Promise<{ slug: st
                onClick={handleOrder}
                className="flex-1 py-4 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-colors tracking-widest text-xs md:text-sm flex items-center justify-center gap-2 shadow-lg shadow-white/10"
              >
-               <span>ORDER VIA WHATSAPP</span>
+               <span>ORDER</span>
              </button>
              
              <button 

@@ -233,7 +233,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "taycan",
       name: "Taycan",
       tagline: "Electro RWD Automatic",
-      image: "/cars/taycan1.avif",
+      image: "/cars/taycan-ireng.avif",
       category: "Taycan",
       specs: { hp: "402 HP", acceleration: "4.4 s", topSpeed: "230 km/h", engine: "Dual Electric Motors", price: "$100.000" },
       description: "The first all-electric sports car with the soul of a Porsche."
@@ -242,7 +242,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "taycan-turbo-gt",
       name: "Taycan Turbo GT",
       tagline: "Electric Fury.",
-      image: "/cars/taycan-bg.avif", // Placeholder
+      image: "/cars/taycan-ireng.avif", // Placeholder
       category: "Taycan",
       specs: { hp: "1019 HP", acceleration: "2.1 s", topSpeed: "305 km/h", engine: "Dual Electric Motors", price: "$230,000" },
       description: "The most powerful series-production Porsche of all time."
@@ -253,7 +253,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "panamera-turbo",
       name: "Panamera Turbo E-Hybrid",
       tagline: "Choose Boldly.",
-      image: "/cars/panamera-bg.avif",
+      image: "/cars/panamera-turbo.avif",
       category: "Panamera",
       specs: { hp: "670 HP", acceleration: "3.0 s", topSpeed: "315 km/h", engine: "4.0L V8 Hybrid", price: "$196,400" },
       description: "Ideally, a sports car should have a mid-mounted engine. But for four people?"
@@ -262,7 +262,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "panamera-4",
       name: "Panamera 4",
       tagline: "Sport Limousine.",
-      image: "/cars/panamera-bg.avif", // Placeholder
+      image: "/cars/panamera-4.avif", // Placeholder
       category: "Panamera",
       specs: { hp: "348 HP", acceleration: "4.8 s", topSpeed: "270 km/h", engine: "2.9L V6 Turbo", price: "$109,800" },
       description: "A sports car for four. Uncompromising performance with luxury comfort."
@@ -273,7 +273,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "macan-gts",
       name: "Macan GTS",
       tagline: "Dare Forward.",
-      image: "/cars/macan-bg.avif",
+      image: "/cars/macan-gts.avif",
       category: "Macan",
       specs: { hp: "434 HP", acceleration: "4.3 s", topSpeed: "272 km/h", engine: "2.9L V6 Twin-Turbo", price: "$89,000" },
       description: "The sports car of compact SUVs. Sharper, sportier, and more intense than ever."
@@ -282,7 +282,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "macan-electric",
       name: "Macan 4 Electric",
       tagline: "Keep Your Essence.",
-      image: "/cars/macan-bg.avif", // Placeholder
+      image: "/cars/macan-4.avif", // Placeholder
       category: "Macan",
       specs: { hp: "402 HP", acceleration: "4.9 s", topSpeed: "220 km/h", engine: "Electric Motors", price: "$78,800" },
       description: "All-electric. All Porsche. The new Macan sets standards in its class."
@@ -293,7 +293,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "cayenne-turbo-gt",
       name: "Cayenne Turbo GT",
       tagline: "Further Together.",
-      image: "/cars/cayene-bg.jpeg",
+      image: "/cars/cayene-turbo-gt.avif",
       category: "Cayenne",
       specs: { hp: "650 HP", acceleration: "3.1 s", topSpeed: "305 km/h", engine: "4.0L V8 Twin-Turbo", price: "$196,300" },
       description: "A supersports car in SUV form. Setting lap records on the Nürburgring Nordschleife."
@@ -302,7 +302,7 @@ export const porscheModels: Record<string, Car[]> = {
       id: "cayenne-e-hybrid",
       name: "Cayenne E-Hybrid",
       tagline: "E-Performance.",
-      image: "/cars/cayene-bg.jpeg", // Placeholder
+      image: "/cars/cayene.avif", // Placeholder
       category: "Cayenne",
       specs: { hp: "463 HP", acceleration: "4.6 s", topSpeed: "254 km/h", engine: "3.0L V6 Hybrid", price: "$97,200" },
       description: "The perfect balance of sustainability and driving dynamics."

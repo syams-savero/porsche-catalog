@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion'; // <--- 1. Tambah 'Variants' di sini
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,8 +16,8 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Varian animasi untuk quote (muncul dari bawah + fade in)
-  const quoteVariant = {
+  // 2. Kasih Tipe data ': Variants' biar TypeScript gak bingung
+  const quoteVariant: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
       opacity: 1, 
@@ -26,8 +26,7 @@ export default function Home() {
     }
   };
 
-  // Varian animasi untuk nama (muncul setelah quote)
-  const nameVariant = {
+  const nameVariant: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { 
       opacity: 1, 
@@ -95,7 +94,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
             
-            {/* 1. 911 (Lebar) */}
+            {/* 1. 911 */}
             <Link href="/models/911" className="lg:col-span-2 block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
@@ -110,14 +109,14 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 2. 718 (Kecil) */}
+            {/* 2. 718 */}
             <Link href="/models/718" className="block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="relative h-full w-full rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-600 transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10" />
-                <Image src="/cars/718-bg2.avif" alt="718" fill className="object-cover object-center opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                <Image src="/cars/718-bg2.avif" alt="718" fill className="object-cover object-bottom opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute top-0 left-0 p-6 z-20 w-full">
                   <h3 className="text-4xl font-black tracking-tighter mb-1 group-hover:text-white transition-colors">718</h3>
                   <span className="text-[10px] border border-white/50 bg-white px-3 py-1 rounded-full text-black font-bold tracking-widest shadow-lg">MID-ENGINE</span>
@@ -125,7 +124,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 3. TAYCAN (Kecil) */}
+            {/* 3. Taycan */}
             <Link href="/models/taycan" className="block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
@@ -140,7 +139,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 4. PANAMERA (Lebar) */}
+            {/* 4. Panamera */}
             <Link href="/models/panamera" className="lg:col-span-2 block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
@@ -155,7 +154,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-            {/* 5. CAYENNE (Lebar) */}
+            {/* 5. Cayenne */}
             <Link href="/models/cayenne" className="lg:col-span-2 block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
@@ -170,7 +169,7 @@ export default function Home() {
               </motion.div>
             </Link>
 
-             {/* 6. MACAN (Kecil) */}
+             {/* 6. Macan */}
              <Link href="/models/macan" className="block group h-full">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -189,7 +188,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* === ENDING SECTION (QUOTE & FOOTER) - INI YANG TADI HILANG === */}
+      {/* === ENDING SECTION === */}
       <section className="w-full bg-black border-t border-zinc-900 py-20 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
           

@@ -33,7 +33,7 @@ export default function ModelDetailPage({ params }: { params: Promise<{ slug: st
 
   const handleOrder = () => {
     const message = `Hello im intrested with ${currentCar.name} (${currentCar.specs.price}). Can i get more information?`;
-    const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const waLink = `https://wa.me/6288225078659?text=${encodeURIComponent(message)}`;
     window.open(waLink, '_blank');
   };
 

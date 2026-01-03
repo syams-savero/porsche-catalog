@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
-// Setup Font Keren
+// Setup Font
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space",
-  weight: ["300", "400", "500", "600", "700"], // Ambil variasi ketebalan
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +26,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+<<<<<<< HEAD
       {/* HANYA BOLEH ADA SATU BODY DI SINI */}
       <body className={`${spaceGrotesk.variable} antialiased bg-black text-white`}>
         <SmoothScroll /> {}
+=======
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HPFENST1PB"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HPFENST1PB');
+            `,
+          }}
+        />
+      </head>
+
+      {/* HANYA SATU BODY */}
+      <body
+        className={`${spaceGrotesk.variable} antialiased bg-black text-white`}
+      >
+        <SmoothScroll />
+>>>>>>> bd125be (add Google analytic)
         {children}
       </body>
     </html>

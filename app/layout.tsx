@@ -26,11 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
+
       {/* HANYA BOLEH ADA SATU BODY DI SINI */}
       <body className={`${spaceGrotesk.variable} antialiased bg-black text-white`}>
         <SmoothScroll /> {}
-=======
+
       <head>
         {/* Google Analytics */}
         <Script
@@ -56,7 +56,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} antialiased bg-black text-white`}
       >
         <SmoothScroll />
->>>>>>> bd125be (add Google analytic)
+ bd125be (add Google analytic)
         {children}
       </body>
     </html>
